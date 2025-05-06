@@ -19,7 +19,7 @@ customCommands:
 gui:
   theme:
     activeBorderColor:
-      - '#b7bdf8'
+      - '#cd91ed'
       - bold
     inactiveBorderColor:
       - '#a5adcb'
