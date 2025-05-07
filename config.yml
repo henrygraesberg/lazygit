@@ -2,6 +2,7 @@ customCommands:
   - key: '!'
     context: 'localBranches, remotes'
     command: 'git fetch --prune'
+    description: 'Prune remote branches'
     prompts:
       - type: 'menu'
         title: 'Prune remote branches?'
@@ -11,10 +12,22 @@ customCommands:
   - key: 'Æ'
     context: 'files'
     command: 'git add -A && git commit -m {{ .Form.CommitMessage | quote }}'
+    description: 'Stage all files and commit with message'
     prompts:
       - type: 'input'
         key: 'CommitMessage'
         title: 'Stage all files and commit with message'
+  - key: '^'
+    context: 'global'
+    command: 'git pull && git push'
+    description: 'Push and pull'
+    prompts:
+      - type: 'menu'
+        title: 'Push and pull?'
+        key: 'Confirm'
+        options:
+          - value: 'Confirm'
+
 
 gui:
   theme:
